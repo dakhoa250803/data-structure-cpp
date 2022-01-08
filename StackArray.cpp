@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <cstring>
 #include "StackArray.h"
-//#include "ArrayList.h"
+#include "ArrayList.h"
 
 using namespace std;
 
@@ -81,10 +81,10 @@ T StackArray<T>::peak(){
 //	return (T*)malloc(this->_maxLength * sizeof(T));
 //}
 //
-//template <class T>
-//size_t StackArray<T>::size(){
-//	return this->_currentLength;
-//}
+template <class T>
+size_t StackArray<T>::size(){
+	return this->ArrayList<T>::size();
+}
 
 template class StackArray<short>;
 template class StackArray<float>;

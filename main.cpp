@@ -12,7 +12,7 @@ typedef short data_t;
 using namespace std;
 
 void printArray(ArrayList<data_t>* arr);
-void printStack(StackLinkedList<data_t>* stack);
+void printStack(IStack<data_t>* stack);
 void printQueue(Queue<data_t>* queue);
 void printLinkedList(SingleLinkedList<data_t>* list);
 void printNodeValue(data_t val, size_t i, size_t length);
@@ -58,20 +58,15 @@ void arrayListExample(){
 void stackExample(){
 	cout <<"Generating Array ...."<<endl;
 	
-	StackLinkedList<data_t>* stack = new StackLinkedList<data_t>();
+	IStack<data_t>* stack = new StackArray<data_t>();
+//	IStack<data_t>* stack = new StackLinkedList<data_t>();
 	for(data_t val = -50; val <= 50; val+=2){
 		stack->push(val);
 	}
+	
 	printStack(stack);
 	
-	
-	data_t pop = stack->pop();
-	cout << pop <<endl;
-	printStack(stack);
-	
-	data_t peak = stack->peak();
-	cout << peak << endl;
-	printStack(stack);
+	delete stack;
 }
 
 void queueExample(){
@@ -110,7 +105,7 @@ void printQueue(Queue<data_t>* queue){
 	cout << "}";
 }
 
-void printStack(StackLinkedList<data_t>* stack){
+void printStack(IStack<data_t>* stack){
 	cout << "\nYour Array:"<<endl;
 	cout<<"{";
 	while(stack->size() > 0){

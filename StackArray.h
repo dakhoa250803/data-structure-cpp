@@ -2,15 +2,16 @@
 #define __STACK_ARR__
 
 #include "ArrayList.h"
+#include "IStack.h"
 
-template <class T> class StackArray :  public ArrayList<T> {
+template <class T> class StackArray :  public ArrayList<T>,public IStack<T> {
 	public:
 		StackArray();
 		~StackArray();
 		void push(T value); // push(1), push(2), push(3)
 		T pop(); // pop() => 3, stack: {1, 2}, pop() => 2, stack: {1}
 		T peak(); // peak() => 2, stack: {1, 2}
-//		size_t size();
+		size_t size();
 		
 	private:
 //		size_t _maxLength;
