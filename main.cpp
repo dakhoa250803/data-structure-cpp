@@ -29,8 +29,9 @@ void printValue(float val,size_t size);
 int main(int argc, char** argv) {
 	//arrayListExample();
 	//stackExample();
-	//queueExample();
 	singleLinkedListExample();
+	//queueExample();
+	
 	return 0;
 }
 
